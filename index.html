@@ -34,7 +34,7 @@
       justify-content: space-between;
     }
     .skins canvas {
-      margin: 16px;
+      margin: 32px;
     }
   </style>
 </head>
@@ -43,10 +43,10 @@
     <h1>Feliz Meliversário!</h1>
     <!-- <img src="imagens/showcase_skins.png" alt="banner"> -->
 
-    <div>
-      <canvas id="skin_container1"></canvas>
-      <canvas id="skin_container2"></canvas>
-      <canvas id="skin_container3"></canvas>
+    <div class="skins">
+      <canvas id="skin_container_1"></canvas>
+      <canvas id="skin_container_2"></canvas>
+      <canvas id="skin_container_3"></canvas>
     </div>
 
     <a href="https://twitter.com/HatsuyaDev">@HatsuyaDev é o artista que fez as encomendas acima</a>
@@ -82,13 +82,13 @@
         }
       }
 
-      function initializeViewer(id) {
+      function initializeViewer(id, skin) {
         skinViewer = new skinview3d.SkinViewer({
           canvas: document.getElementById(id)
         });
 
-        skinViewer.width = 300;
-        skinViewer.height = 400;
+        skinViewer.width = 260;
+        skinViewer.height = 500;
         skinViewer.fov = 70;
         skinViewer.zoom = 0.9;
         skinViewer.globalLight.intensity = 3;
@@ -105,16 +105,16 @@
             skinViewer.playerObject.skin[part][layer].visible = true;
           }
         }
-        skinViewer.loadSkin("skin_amelie_1.png", {model: "slim", ears: false});
+        skinViewer.loadSkin(skin, {model: "slim", ears: false});
         skinViewer.loadCape(null);
         skinViewer.loadEars(null);
         skinViewer.background = null;
         skinViewer.nameTag = null;
       }
 
-      initializeViewer("skin_container1");
-      initializeViewer("skin_container2");
-      initializeViewer("skin_container3");
+      initializeViewer("skin_container_1", "skin_amelie_1.png");
+      initializeViewer("skin_container_2", "skin_amelie_2.png");
+      initializeViewer("skin_container_3", "skin_amelie_3.png");
     </script>
   </main>
 </body>
