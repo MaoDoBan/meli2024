@@ -33,7 +33,12 @@
       display: flex;
       justify-content: space-between;
     }
-    .skins canvas {
+    .container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    canvas {
       margin: 32px;
     }
     .download{
@@ -57,17 +62,17 @@
     <!-- <img src="imagens/showcase_skins.png" alt="banner"> -->
 
     <div class="skins">
-      <div>
-        <canvas id="skin_container_1"></canvas>
-        <a href="https://github.com/MaoDoBan/meli2024/blob/main/skin_amelie_1.png?raw=true" target="_blank">baixar</a>
+      <div class="container">
+        <canvas id="skin_canvas_1"></canvas>
+        <a class="download" href="https://github.com/MaoDoBan/meli2024/blob/main/skin_amelie_1.png?raw=true" target="_blank">baixar</a>
       </div>
-      <div>
-        <canvas id="skin_container_2"></canvas>
-        <a href="https://github.com/MaoDoBan/meli2024/blob/main/skin_amelie_2.png?raw=true" target="_blank">baixar</a>
+      <div class="container">
+        <canvas id="skin_canvas_2"></canvas>
+        <a class="download" href="https://github.com/MaoDoBan/meli2024/blob/main/skin_amelie_2.png?raw=true" target="_blank">baixar</a>
       </div>
-      <div>
-        <canvas id="skin_container_3"></canvas>
-        <a href="https://github.com/MaoDoBan/meli2024/blob/main/skin_amelie_3.png?raw=true" target="_blank">baixar</a>
+      <div class="container">
+        <canvas id="skin_canvas_3"></canvas>
+        <a class="download" href="https://github.com/MaoDoBan/meli2024/blob/main/skin_amelie_3.png?raw=true" target="_blank">baixar</a>
       </div>
     </div>
 
@@ -136,9 +141,9 @@
         skinViewer.nameTag = null;
       }
 
-      initializeViewer("skin_container_1", "skin_amelie_1.png");
-      initializeViewer("skin_container_2", "skin_amelie_2.png");
-      initializeViewer("skin_container_3", "skin_amelie_3.png");
+      initializeViewer("skin_canvas_1", "skin_amelie_1.png");
+      initializeViewer("skin_canvas_2", "skin_amelie_2.png");
+      initializeViewer("skin_canvas_3", "skin_amelie_3.png");
     </script>
   </main>
 </body>
