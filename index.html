@@ -21,11 +21,11 @@
       margin: 48px;
       color: #1068cc;
     }
-    a{
+    #credits{
       text-decoration: none;
       font-family: "Press Start 2P", system-ui;
+      font-size: 14px;
       color: #1068cc;
-      padding: 4px;
       margin: 16px;
     }
     a:hover{ color: #1573cf; }
@@ -36,6 +36,19 @@
     .skins canvas {
       margin: 32px;
     }
+    .download{
+      text-decoration: none;
+      font-family: "Press Start 2P", system-ui;
+      font-size: 10px;
+      color: #1068cc;
+      margin: 8px;
+    }
+    #painting{
+      width: 480px;
+      height: 480px;
+      margin: 32px;
+      image-rendering: pixelated;
+    }
   </style>
 </head>
 <body>
@@ -44,12 +57,23 @@
     <!-- <img src="imagens/showcase_skins.png" alt="banner"> -->
 
     <div class="skins">
-      <canvas id="skin_container_1"></canvas>
-      <canvas id="skin_container_2"></canvas>
-      <canvas id="skin_container_3"></canvas>
+      <div>
+        <canvas id="skin_container_1"></canvas>
+        <a href="https://github.com/MaoDoBan/meli2024/blob/main/skin_amelie_1.png?raw=true" target="_blank">baixar</a>
+      </div>
+      <div>
+        <canvas id="skin_container_2"></canvas>
+        <a href="https://github.com/MaoDoBan/meli2024/blob/main/skin_amelie_2.png?raw=true" target="_blank">baixar</a>
+      </div>
+      <div>
+        <canvas id="skin_container_3"></canvas>
+        <a href="https://github.com/MaoDoBan/meli2024/blob/main/skin_amelie_3.png?raw=true" target="_blank">baixar</a>
+      </div>
     </div>
 
-    <a href="https://twitter.com/HatsuyaDev">@HatsuyaDev é o artista que fez as encomendas acima</a>
+    <img id="painting" src="meli_quadro.png" alt="quado">
+
+    <a id="credits" href="https://twitter.com/HatsuyaDev">@HatsuyaDev é o artista que fez as encomendas acima</a>
 
     <script src="skinview3d.bundle.js"></script>
     <script>
@@ -93,10 +117,10 @@
         skinViewer.zoom = 0.9;
         skinViewer.globalLight.intensity = 3;
         skinViewer.cameraLight.intensity = 0.6;
-        skinViewer.autoRotate = false; //document.getElementById("auto_rotate").checked;
+        skinViewer.autoRotate = false;
         skinViewer.autoRotateSpeed = 0.3;
         skinViewer.animation = availableAnimations['idle'];
-        skinViewer.animation.speed = 1;
+        skinViewer.animation.speed = 0.6;
         skinViewer.controls.enableRotate = true;
         skinViewer.controls.enableZoom = true;
         skinViewer.controls.enablePan = true;
