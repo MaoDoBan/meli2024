@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meliversário</title>
+  <style>
+    body, h1, h2, h3, figure, input{ margin: 0; }
+    body{ background-color: #18181b; }
+    main{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: white;
+    }
+    h2{ margin: 16px; }
+    a{
+      text-decoration: none;
+      color: inherit;
+      padding: 4px;
+      /* border: 2px solid white;
+      border-radius: 5px;
+      background-color: #4a4a4a; */
+      margin: 13px;
+    }
+    a:hover{ color: #bbb; }
+    #skinContainer{
+      width: 300px;
+      height: 500px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h2>Feliz Meliversário!</h2>
+    <!-- <img src="imagens/showcase_skins.png" alt="banner"> -->
+
+    <div id="skinContainer"></div>
+
+    <a href="https://twitter.com/HatsuyaDev">@HatsuyaDev é o artista que fez as encomendas acima</a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/94/three.min.js" integrity="sha256-NGC9JEuTWN4GhTj091wctgjzftr+8WNDmw0H8J5YPYE=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/InventivetalentDev/MineRender@1.4.6/dist/skin.min.js"></script>
+    <script>
+      var skinRender = new SkinRender(
+        {
+          controls: {
+            enabled: true,
+            zoom: true,
+            rotate: true,
+            pan: true,
+            keys: true
+          },
+          camera: {
+            type: "perspective",
+            x: 20,
+            y: 35,
+            z: 20,
+            target: [0, 21, 0]
+          },
+          canvas: {
+            width: 300,
+            height: 500
+          },
+          pauseHidden: false,
+          forceContext: false,
+          sendStats: true
+        },
+        document.getElementById("skinContainer")
+      );
+      skinRender.render("https://s.namemc.com/i/edc4e91b24f3be14.png"//{
+        //username: "amelieBluie",
+        // capeUrl: "https://minerender.org/img/optifine_hires_cape.png",
+        //slim: true,
+        //cape: false
+        // texture: {
+        //   url: "https://s.namemc.com/i/edc4e91b24f3be14.png",
+        //   cape: false,
+        // }
+      //}
+      );
+    </script>
+  </main>
+</body>
+</html>
